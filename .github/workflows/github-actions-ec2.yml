@@ -1,6 +1,18 @@
-- name: Execute SSH commmands on remote server
-  uses: JimCronqvist/action-ssh@master
-  with:
-    hosts: "root@216.48.181.64"
-    privateKey: ${{ secrets.PRIVATE_KEY }}
-    command: ls -lah
+name: CI/CD counter app
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  #First we will see the application build or not , then we will deploy in EC2
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: "root@216.48.181.64"
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          command: ls -lah
