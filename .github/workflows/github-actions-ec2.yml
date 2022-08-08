@@ -1,8 +1,6 @@
 name: CI/CD counter app
 
-on:
-  push:
-    branches: [master]
+on: [push]
 
 jobs:
   #First we will see the application build or not , then we will deploy in EC2
@@ -10,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Execute SSH commmands on remote server
         uses: JimCronqvist/action-ssh@master
         with:
