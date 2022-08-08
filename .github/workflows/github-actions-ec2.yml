@@ -7,13 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
-
-    - name: ls -a via ssh
-      uses: fifsky/ssh-action@master
-      with:
-        command: |
-          ls -a
-        host: ${{ secrets.HOST }}
-        user: root
-        key: ${{ secrets.PRIVATE_KEY}}
+    steps:
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            ls -a
+          host: ${{ secrets.HOST }}
+          user: root
+          key: ${{ secrets.PRIVATE_KEY}}
