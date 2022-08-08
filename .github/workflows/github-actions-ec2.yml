@@ -1,0 +1,16 @@
+name: CI/CD counter app
+
+on:
+  push:
+    branches: [ master ]
+    
+    
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    
+steps:
+  - name: Checkout the files
+    uses: actions/checkout@v2
+    
