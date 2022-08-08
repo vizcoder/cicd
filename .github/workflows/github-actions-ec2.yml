@@ -1,16 +1,6 @@
-name: CI/CD counter app
-
-on:
-  push:
-    branches: [ master ]
-    
-    
-jobs:
-  deploy:
-    name: Deploy to EC2
-    runs-on: ubuntu-latest
-    
-steps:
-  - name: Checkout the files
-    uses: actions/checkout@v2
-    
+- name: Execute SSH commmands on remote server
+  uses: JimCronqvist/action-ssh@master
+  with:
+    hosts: "root@216.48.181.64"
+    privateKey: ${{ secrets.PRIVATE_KEY }}
+    command: ls -lah
