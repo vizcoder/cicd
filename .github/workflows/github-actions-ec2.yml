@@ -10,9 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
         with:
-          hosts: "root@216.48.181.64"
-          privateKey: ${{ secrets.PRIVATE_KEY }}
-          command: ls -lah
+          command: |
+            ls -a
+          host: ${{ secrets.HOST }}
+          user: root
+          key: ${{ secrets.PRIVATE_KEY}}
