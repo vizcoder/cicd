@@ -10,9 +10,10 @@ import os
 from download_model_utils import *
 
 
-model_file_uri = "s3://numee-ai/Ai/Models/Mark2_Swap_Numee_Prod.tar.gz"
+# model_file_uri = "s3://numee-ai/Ai/Models/Mark2_Swap_Numee_Prod.tar.gz"
 # model_file_uri = "s3://numee-ai/Ai/Models/talkingHeads_Model.tar.gz"
-# model_file_uri = "s3://numee-ai/Ai/Models/tt.txt"
+# model_file_uri = "s3://numee-ai/Ai/Models/model1.tar.gz"
+model_file_uri = "s3://numee-ai/Ai/Models/model2.tar.gz"
 
 # prefix = "../localhost/Data_Folder/"
 prefix = "/opt/ml/"
